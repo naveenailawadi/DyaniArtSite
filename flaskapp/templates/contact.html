@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block content %}
+      <!-- Content -->
+      <article>
+        <header class="section background-dark">
+          <div class="line">
+            <h1 class="text-white margin-top-bottom-40 text-size-60 text-line-height-1">Contact Us</h1>
+            <p class="margin-bottom-0 text-size-16">With communication at the core of our business, rest assured that we will be in touch with you shortly. Below, please give us some additional information about what you are trying to build, so we can give you an accurate quote. Please let us know the best ways to reach you. Your response will go directly to the company's telegram hotline, notifing us of your interest.</p>
+        </header>
+        <div class="section background-white">
+          <div class="line margin-bottom-60">
+            <div class="margin">
+              <div class="s-12 m-12 l-4 margin-m-bottom">
+                <div class="padding-2x block-bordered border-radius">
+                  <div class="float-left hide-s">
+                    <i class="icon-sli-envelope icon3x text-primary"></i>
+                  </div>
+                  <div class="margin-left-70 margin-s-left-0 margin-bottom">
+                    <h3 class="margin-bottom-0">E-mail</h3>
+                    <a href="mailto:admin@entredeveloperslab.com">admin@entredeveloperslab.com</a>
+                  </div>
+                </div>
+              </div>
+              <div class="s-12 m-12 l-4 margin-m-bottom">
+                <div class="padding-2x block-bordered border-radius">
+                  <div class="float-left hide-s">
+                    <i class="icon-sli-phone icon3x text-primary"></i>
+                  </div>
+                  <div class="margin-left-70 margin-s-left-0">
+                    <h3 class="margin-bottom-0">Phone</h3>
+                    <a href="tel:+16104628711">+1 (610) 462-8711</a>
+                    <br>
+                  </div>
+                </div>
+              </div>
+              <div class="s-12 m-12 l-4 margin-m-bottom">
+                <div class="padding-2x block-bordered border-radius">
+                  <div class="float-left hide-s">
+                    <img class="telegram-icon" src="{{url_for('static', filename='img/icons/telegram.svg')}}">
+                  </div>
+                <div class="margin-left-70 margin-s-left-0 margin-bottom">
+                  <h3 class="margin-bottom-0">Telegram</h3>
+                  <p>@naveen_ailawadi
+                  </p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="line">
+            <div class="margin">
+              <!-- Contact Form -->
+              <div id="formErrors" class="s-12"></div>
+              <div class="s-12 m-12 l-6">
+                <h2 class="margin-bottom-10">Send us a message</h2>
+                <form id="contactForm" name="contactForm" class="customform" method="post">
+                  <div class="line">
+                    <div class="margin">
+                      <div class="s-12">
+                        <input name="name" id="nameField" class="required name" placeholder="Your name" title="Your name" type="text" />
+                        <p class="name-error form-error">Please enter your name.</p>
+                      </div>
+                      <div class="s-12 m-12 l-6">
+                        <input name="email" id="emailField" class="required email" placeholder="Your e-mail" title="Your e-mail" type="text" />
+                        <p class="email-error form-error">Please enter your e-mail.</p>
+                      </div>
+                      <div class="s-12 m-12 l-6">
+                        <input name="phone-number" id="phoneField" class="email" placeholder="Your phone number (optional)" title="Your phone-number" type="text" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="s-12">
+                    <input name="subject" class="subject" id="subjectField" placeholder="Subject (optional)" title="Subject" type="text" />
+                    <p class="subject-error form-error">Please enter the subject.</p>
+                  </div>
+                  <div class="s-12">
+                    <textarea name="message" class="required message" id="messageField" placeholder="Your message" rows="3"></textarea>
+                    <p class="message-error form-error">Please enter your message.</p>
+                  </div>
+                  <!--list of added platforms-->
+                  <div class="s-12">
+                    <ul id="additionalPlatforms"></ul>
+                  </div>
+
+                  <div class="s-12 m-12 l-6">
+                    <ul id="Menu">
+                      <li><a>Additional Platforms</a>
+                        <ul>
+                          <li><a id="add-telegram" onclick="addTextField(this)">Telegram</a></li>
+                          <li><a id="add-discord" onclick="addTextField(this)">Discord</a></li>
+                          <li><a id="add-whatsapp" onclick="addTextField(this)">WhatsApp</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  {% raw %}
+                    <template id="additionalContactTemplate">
+                        <input class="name" label="additionalPlatform" placeholder="{{method}}" id="{{method}}Field" type="text" />
+                    </template>
+                  {% endraw %}
+
+                  <div class="s-12" id="submitField"><button class="s-12 submit-form button background-primary text-white" type="submit">Send</button></div>
+                </form>
+              </div>
+              <div class="s-12 m-12 l-4">
+                <h2 class="margin-bottom-10">Business Hours (EST)</h2>
+                <div class="s-6">
+                  <p class="text-size-16">
+                  Monday<br>
+                  Tuesday<br>
+                  Wednesday<br>
+                  Thursday<br>
+                  Friday<br>
+                  Saturday<br>
+                  Sunday
+                  </p>
+                </div>
+                <div class="s-6">
+                  <p class="text-size-16 text-strong">
+                  08.00-18.00<br>
+                  08.00-18.00<br>
+                  08.00-18.00<br>
+                  08.00-18.00<br>
+                  08.00-14.00<br>
+                  10.00-14.00<br>
+                  Close
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script language="JavaScript" type="text/javascript" src="{{ url_for('static', filename='js/mustache/mustache.js') }}"></script>
+        <script language="JavaScript" type="text/javascript" src="{{ url_for('static', filename='js/contact.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/contact.css')}}">
+      </article>
+{% endblock content %}

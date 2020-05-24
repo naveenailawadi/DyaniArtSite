@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block content %}
+     <!-- Main Header -->
+      <header>
+        <div class="carousel-default owl-carousel carousel-main carousel-nav-white background-dark text-center">
+          <div class="item">
+            <div class="s-12">
+              <img src="{{url_for('static', filename='img/desk.jpg')}}" alt="">
+              <div class="carousel-content">
+                <div class="content-center-vertical line">
+                  <div class="margin-top-bottom-80">
+                    <!-- Title -->
+                    <h1 class="text-white margin-bottom-30 text-size-60 text-m-size-30 text-line-height-1">Welcome to the<br> EntreDevelopers Lab</h1>
+                    <div class="s-12 m-10 l-8 center"><p class="text-white text-size-18 margin-bottom-40">In the 21st century software industry, it is more important than ever to have close relationships between clients and developers. For us, doing business goes far beyond the bottom line. It means fostering a long-term relationship to unlock your company's true potential.</p></div>
+                    <div class="line">
+                      <div class="s-12 m-12 l-3 center">
+                        <a class="button button-white-stroke s-12" href="{{url_for('contact')}}">Get Started Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Section 1 -->
+      <section class="section">
+        <div class="line">
+          <h2 class="text-size-50 text-center">Our Mission</h2>
+          <hr class="break-small background-primary break-center">
+        </div>
+        <div class="line">
+          <div class="margin">
+            <div class="s-12 m-12 l-2">
+              <p class="h1 text-size-30 margin-m-bottom-30 text-primary text-line-height-1 text-right">Innovation<br> every step <br> of the way.</p>
+            </div>
+            <div class="s-12 m-12 l-5">
+              <p class="text-size-14 margin-m-bottom-30 text-dark">When you receive a quote from the EntreDevelopers Lab, you receive assurance of a job well done. Our professionals are screened to the highest standard, making them more than qualified for your project. Whether you want to create a new social media platform, commerce site, or a simple tool to organize your business, we can help facilitate your transition to a modern, cutting-edge organization. </p>
+            </div>
+            <div class="s-12 m-12 l-5">
+              <p class="text-size-14 text-dark">Before, during, and after production, use our proprietary market research tools to find your company's niche and quantify your market. Moreover, a relationship with us ensures that your technology will evolve and stand the test of time for years to come.</p>
+            </div>
+          </div>
+        </div>
+        <a id="products"></a>
+      </section>
+
+      <!-- Section 1 (cont) -->
+      <section class="section-small-padding background-white text-center">
+        <div class="line">
+          <div class="margin">
+            <div class="s-12 m-12 l-4 margin-m-bottom">
+              <div class="padding-2x block-bordered">
+                <img class="text-dark center margin-bottom-30 product-icon" src="{{url_for('static', filename='img/icons/cellphone.svg')}}">
+                <h2 class="text-thin">iOS/Android</h2>
+                <p class="margin-bottom-30">Do you have an idea for a new social media platform? Maybe you just want a personal app for your business. Even if we couldn't guess your needs, we can build your idea into an application and get it published on the App Store and/or the Google Play Store.</p>
+              </div>
+            </div>
+            <div class="s-12 m-12 l-4 margin-m-bottom">
+              <div class="padding-2x block-bordered">
+                <img class="text-dark center margin-bottom-30 product-icon" src="{{url_for('static', filename='img/icons/code.svg')}}">
+                <h2 class="text-thin">Web Development<br> (Full Stack)</h2>
+                <p class="margin-bottom-30">Are you looking to create a proprietary platform? Maybe you are just growing your business by taking the next appropriate step. Whatever the reason, let our team of web developers build it for you and make your dream a reality!</p>
+              </div>
+            </div>
+            <div class="s-12 m-12 l-4 margin-m-bottom">
+              <div class="padding-2x block-bordered">
+                <img class="text-dark center margin-bottom-30 product-icon" src="{{url_for('static', filename='img/icons/analysis.svg')}}">
+                <h2 class="text-thin">Data Analytics<br> (AI/ML/Data-Mining)</h2>
+                <p class="margin-bottom-30">Take your business to the next level by using modern technology to analyze your data and return accurate projections. Use our proprietary tools or have us design a custom algorithm to suit your company's need.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="section background-white text-center">
+        <div class="line">
+          <h2 class="text-size-50 text-center">Testimonials</h2>
+          <hr class="break-small background-primary break-center">
+          <div class="carousel-default owl-carousel carousel-wide-arrows">
+            <div class="item">
+              <div class="s-12 m-12 l-7 center text-center">
+                <p class="h1 margin-bottom text-size-20">Your team is more knowledgable than all the others that I have considered. I am excited to move forward with you.</p>
+                <p class="h1 text-size-16">Josh Sheperd</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="s-12 m-12 l-7 center text-center">
+                <p class="h1 margin-bottom text-size-20">It is a pleasure to work with you. You prioritize communication with your clients and it shows.</p>
+                <p class="h1 text-size-16">Nick Doherty</h5>
+              </div>
+            </div>
+            <div class="item">
+              <div class="s-12 m-12 l-7 center text-center">
+                <p class="h1 margin-bottom text-size-20">Excellent work. I didn't expect you to finish this quickly with such precision. I look forward to doing more business with you in the future.</p>
+                <p class="h1 text-size-16">Andrew Angelos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Us -->
+      <div class="background-primary padding text-center">
+        <a href="{{url_for('contact')}}">
+          <div class="background-primary text-center">
+            <span style="color:#ffffff;">Click Here to Contact Us!</span>
+          </div>
+        </a>
+      </div>
+{% endblock content %}

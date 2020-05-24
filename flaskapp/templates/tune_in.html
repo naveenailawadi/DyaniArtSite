@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block content %}
+      <!-- Content -->
+      <article>
+        <header class="section background-dark">
+          <div class="line">
+            <h1 class="text-white margin-top-bottom-40 text-size-60 text-line-height-1">Tune-In</h1>
+            <p class="margin-bottom-0 text-size-16">Using Tune-In, begin leveraging social media data to conduct your own primary research giving your company a competitive advantage. Using our proprietary algorithm, track the growth of different concepts and markets over time like never before. You tell us what to research, and start realizing trends within 7 days.</p>
+          </div>
+        </header>
+        <div class="section background-white">
+          <div class="line">
+            <h2 class="text-size-40 margin-bottom-30">Quit Secondary Data</h2>
+            <hr class="break-small background-primary margin-bottom-30">
+            <p>
+            Everyone has access to the news and public research. Setting a customized scraper to find unique industry trends and correlations will give you the market edge to beat the competition. Use sentiment analysis to find the enthusiasm behind your custom-studied industry trends.
+            </p>
+            <blockquote class="margin-top-bottom-20">
+              <h3 class="text-size-20 text-line-height-1 margin-bottom-15">Just Listen</h3>
+              By streaming social media data in real time, we build your company a database of information with near infinite applications. Get the results of your research pre-processed and sent via email on a weekly/monthly basis. You can decide your own custom weighting based on followers, reddit karma, facebook interest, time, or social sentiment. You decide what to research and let us do the rest.
+            </blockquote>
+
+            <div class="line margin-top-30">
+              <div class="margin">
+                <div class="s-12 m-6 l-6">
+                  <img src="{{url_for('static', filename='</html>img/img-01.jpg')}}" alt="">
+                  <div align="center">
+                    <ul>
+                      <li class="sublist-inline">
+                        <h2 align="center" class="text-thin">Platforms</h2>
+                        <ul style="text-align: left; list-style-position: inside; display: inline-block;">
+                            <li class="h1 margin-bottom text-size-20">
+                              Facebook
+                            </li>
+                            <li class="h1 margin-bottom text-size-20">
+                              Twitter
+                            </li>
+                            <li class="h1 margin-bottom text-size-20">
+                              Instagram
+                            </li>
+                            <li class="h1 margin-bottom text-size-20">
+                              Reddit
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="sublist-inline">
+                        <h2 align="center" class="text-thin">Filters</h2>
+                        <ul style="text-align: left; list-style-position: inside; display: inline-block;">
+                            <li class="h1 margin-bottom text-size-20">
+                              Keywords/Phrases
+                            </li>
+                            <li class="h1 margin-bottom text-size-20">
+                              Hashtags
+                            </li>
+                            <li class="h1 margin-bottom text-size-20">
+                              Influencers
+                            </li>
+                            <li class="h1 margin-bottom text-size-20">
+                              Locations
+                            </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="s-12 m-6 l-6">
+                  <img src="{{url_for('static', filename='img/microphone.jpg')}}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="background-primary padding text-center">
+        <a href="{{url_for('contact')}}">
+          <div class="background-primary text-center">
+            <span style="color:#ffffff;">Apply for a Free Consultation</span>
+          </div>
+        </a>
+      </div>
+      </article>
+{% endblock content %}

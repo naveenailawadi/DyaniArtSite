@@ -1,0 +1,13 @@
+<b>{{information['name']}}</b>
+
+<i>{{information['subject']}}</i>
+{{information['message']}}
+
+<b>Contact: </b>
+- {{information['email']}}
+- {{information['phoneNumber']}}
+
+{% for pair in information['additionalPlatforms'] %}
+- {{pair['platform']}}: {{pair['username']}}
+{% endfor %}
+
