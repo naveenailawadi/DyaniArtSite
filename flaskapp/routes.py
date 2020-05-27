@@ -7,24 +7,18 @@ import json
 
 
 @app.route("/")
-@app.route("/services")
-@app.route("/home")
+@app.route("/home", methods=['GET', 'POST'])
 def home():
     return render_template('home.html', home=True)
 
 
-@app.route("/tune_in")
-def tune_in():
-    return render_template('tune_in.html', title='Tune-In')
+# make all the other ones like this
+@app.route("/paintings", methods=['GET', 'POST'])
+def paintings():
+    return render_template('paintings.html', home=True)
 
-
-@app.route("/contact", methods=['GET', 'POST'])
-def contact():
-    return render_template('contact.html', title='Contact')
 
 # make a backend route to send the data somewhere (a database, telegram message, etc)
-
-
 @app.route("/add_lead", methods=['GET', 'POST'])
 def add_lead():
     messenger = Messenger(TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)

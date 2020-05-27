@@ -1,136 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167424615-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    gtag('config', 'UA-167424615-1');
-  </script>
+  {% if title %}
+      <title>Art by Dyani - {{title}}</title>
+  {% else %}
+      <title>Art by Dyani</title>
+  {% endif %}
+
+  {% if home %}
+    <meta name="description" content="At EntreDevelopers Lab, we build cutting edge software to give the antrepreneurs of today the tools of tomorrow.">
+    <link rel="canonical" href="http://entredeveloperslab.com/" />
+  {% endif %}
 
 
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{url_for('static', filename='css/components.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/icons.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/responsee.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='owl-carousel/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='owl-carousel/owl.theme.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/template-style.css')}}">
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="{{url_for('static', filename='js/jquery-1.8.3.min.js')}}"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/jquery-ui.min.js')}}"></script>
+  <!-- Favicons -->
+  <link href="{{url_for('static', filename='img/favicon.png')}}" rel="icon">
+  <link href="{{url_for('static', filename='img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
-    <link rel="icon" type="image/png" href="{{url_for('static', filename='img/basic_block_logo.png')}}">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    {% if title %}
-        <title>EntreDevelopers Lab - {{title}}</title>
-    {% else %}
-        <title>EntreDevelopers Lab</title>
-    {% endif %}
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/venobox/venobox.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/aos/aos.css')}}" rel="stylesheet">
 
-    {% if home %}
-      <meta name="description" content="At EntreDevelopers Lab, we build cutting edge software to give the antrepreneurs of today the tools of tomorrow.">
-      <link rel="canonical" href="http://entredeveloperslab.com/" />
-    {% endif %}
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio - v1.2.1
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body class="size-1140">
-    <!-- HEADER -->
-    <header role="banner" class="position-absolute">
-      <!-- Top Navigation -->
-      <nav class="background-transparent background-transparent-hightlight full-width sticky">
-        <div class="s-12 l-2">
-          <a href="{{url_for('home')}}" class="logo">
-            <!-- Logo White Version -->
-            <img class="logo-white" src="{{url_for('static', filename='img/logo.png')}}" alt="">
-            <!-- Logo Dark Version -->
-            <img class="logo-dark" src="{{url_for('static', filename='img/logo-dark.png')}}" alt="">
-          </a>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="{{url_for('static', filename='img/profile-img.jpg')}}" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Dyani Hernandez</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.instagram.com/dyani.toro_art/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+
+          <!--<li><a href="mailto:dyanihernandez01@gmail.com"><i class="bx bx-envelope"></i> Email</a></li>-->
         </div>
-        <div class="top-nav s-12 l-10">
-          <p class="nav-text"></p>
-          <ul class="right chevron">
-            <li><a href="{{url_for('home')}}">Home</a></li>
-            <li><a href="{{url_for('home')}}#products">Products</a></li>
-            <li><a>Proprietary Technology</a>
-              <ul style="background: rgba(255, 255, 255, 0.5)">
-                <li><a href="http://publicize.pro" target="_blank">Publicize</a>
-                </li>
-                <li><a href={{url_for('tune_in')}}>Tune-In</a></li>
-              </ul>
-            </li>
-            <li><a href="{{url_for('contact')}}">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+      </div>
 
-    <!-- MAIN -->
-    <main role="main">
-      {% block content %}{% endblock %}
+      <nav class="nav-menu">
+        <ul>
+          <li class="active"><a href="{{url_for('home')}}#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="{{url_for('home')}}#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="{{url_for('home')}}#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="{{url_for('home')}}#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
+          <li><a href="{{url_for('home')}}#services"><i class="bx bx-server"></i> Services</a></li>
+          <li><a href="{{url_for('home')}}#contact"><i class="bx bx-envelope"></i> Contact</a></li>
 
-    </main>
+        </ul>
+      </nav><!-- .nav-menu -->
+      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
-    <!-- FOOTER -->
-    <footer>
+    </div>
+  </header><!-- End Header -->
 
-      <!-- Main Footer -->
-      <section class="background-dark full-width">
-        <!-- Map -->
-        <div class="s-12 m-12 l-6 margin-m-bottom-2x">
-          <div class="s-12 center">
-            <img style="width: 600px;" src="{{url_for('static', filename='img/group-workspace.jpg')}}">
-          </div>
-        </div>
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main><!-- End #main -->
 
-        <!-- Collumn 2 -->
-        <div class="s-12 m-12 l-6 margin-m-bottom-2x">
-          <div class="padding-2x">
-            <div class="line">
-                <div class="float-left">
-                  <i class="icon-sli-envelope text-primary icon3x"></i>
-                </div>
-                <div class="margin-left-70 margin-bottom-30">
-                  <h3 class="margin-bottom-0">E-mail</h3>
-                  <a href="mailto:admin@entredeveloperslab.com">admin@entredeveloperslab.com</a>
-                </div>
-                <div class="float-left">
-                  <i class="icon-sli-phone text-primary icon3x"></i>
-                </div>
-                <div class="margin-left-70 margin-bottom-30">
-                  <h3 class="margin-bottom-0">Phone</h3>
-                  <a href="tel:+16104628711">+1 (610) 462-8711</a>
-                </div>
-                <div class="float-left">
-                  <img class="telegram-icon" src="{{url_for('static', filename='img/icons/telegram.svg')}}">
-                </div>
-                <div class="margin-left-70">
-                  <h3 class="margin-bottom-0">Telegram</h3>
-                  <p>@naveen_ailawadi</p>
-                </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <hr class="break margin-top-bottom-0" style="border-color: rgba(0, 38, 51, 0.80);">
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Art by Dyani</span></strong>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+        Site created by <a href="https://entredeveloperslab.com/" target="_blank">EntreDevelopers Lab</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
 
-      <!-- Bottom Footer -->
-      <section class="padding background-dark full-width">
-        <div class="s-12 l-6">
-          <p class="text-size-12">Copyright 2020, EntreDevelopers Lab, Inc.</p>
-        </div>
-        <div class="s-12 l-6">
-        </div>
-      </section>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-    </footer>
-    <script type="text/javascript" src="{{url_for('static', filename='js/responsee.js')}}"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='owl-carousel/owl.carousel.js')}}"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/template-scripts.js')}}"></script>
-  </body>
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/jquery.easing/jquery.easing.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/waypoints/jquery.waypoints.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/counterup/counterup.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/venobox/venobox.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/owl.carousel/owl.carousel.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/typed.js/typed.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/aos/aos.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+</body>
+
 </html>
